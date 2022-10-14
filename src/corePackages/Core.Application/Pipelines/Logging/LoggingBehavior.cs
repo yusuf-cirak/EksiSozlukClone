@@ -33,10 +33,9 @@ public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
         {
             MethodName = next.Method.Name,
             Parameters = logParameters,
-            User = _httpContextAccessor.HttpContext == null ||
-                   _httpContextAccessor.HttpContext.User.Identity.Name == null
-                       ? "?"
-                       : _httpContextAccessor.HttpContext.User.Identity.Name
+            User = _httpContextAccessor.HttpContext?.User?.Identity?.Name == null
+                       ? "<anonymousUser/>"
+                       : _httpContextAccessor.HttpContext.User.Identity.Name ?? string.Empty
         };
 
         _loggerServiceBase.Info(JsonConvert.SerializeObject(logDetail));

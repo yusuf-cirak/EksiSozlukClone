@@ -37,12 +37,12 @@ public class Paginate<T> : IPaginate<T>
         Items = Array.Empty<T>();
     }
 
-    public int From { get; set; }
-    public int Index { get; set; }
-    public int Size { get; set; }
-    public int Count { get; set; }
-    public int Pages { get; set; }
-    public IList<T> Items { get; set; }
+    public int From { get; init; }
+    public int Index { get; init; }
+    public int Size { get; init; }
+    public int Count { get; init; }
+    public int Pages { get; init; }
+    public IList<T> Items { get; init; }
     public bool HasPrevious => Index - From > 0;
     public bool HasNext => Index - From + 1 < Pages;
 }

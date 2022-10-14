@@ -48,7 +48,7 @@ public class ElasticSearchManager : IElasticSearch
     public async Task<IElasticSearchResult> CreateNewIndexAsync(IndexModel indexModel)
     {
         ElasticClient elasticClient = GetElasticClient(indexModel.IndexName);
-        if (elasticClient.Indices.Exists(indexModel.IndexName).Exists)
+        if ((await elasticClient.Indices.ExistsAsync(indexModel.IndexName)).Exists)
             return new ElasticSearchResult(false, "Index already exists");
 
         CreateIndexResponse? response = await elasticClient.Indices.CreateAsync(indexModel.IndexName, se =>
