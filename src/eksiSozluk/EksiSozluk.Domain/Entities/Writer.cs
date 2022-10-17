@@ -9,7 +9,12 @@ public class Writer:User
     public virtual ICollection<EntryComment> EntryComments { get; set; }
 
     public virtual ICollection<EntryFavorite> EntryFavorites { get; set; }
+    
+    public virtual ICollection<EntryVote> EntryVotes { get; set; }
+
     public virtual ICollection<EntryCommentFavorite> EntryCommentFavorites { get; set; }
+
+    public virtual ICollection<EntryCommentVote> EntryCommentVotes { get; set; }
 
     public Writer()
     {
