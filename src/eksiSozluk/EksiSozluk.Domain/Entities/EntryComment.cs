@@ -5,7 +5,7 @@ namespace EksiSozluk.Domain.Entities;
 
 public class EntryComment:Entity
 {
-    public int UserId { get; set; }
+    public int WriterId { get; set; }
     public int EntryId { get; set; }
     public string Content { get; set; }
     public virtual Entry Entry { get; set; }
