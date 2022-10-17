@@ -5,8 +5,10 @@ namespace Core.Security.Entities;
 
 public class User : Entity
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    // public string FirstName { get; set; }
+    // public string LastName { get; set; }
+
+    public string UserName { get; set; }
     public string Email { get; set; }
     public byte[] PasswordSalt { get; set; }
     public byte[] PasswordHash { get; set; }
@@ -22,12 +24,11 @@ public class User : Entity
         RefreshTokens = new HashSet<RefreshToken>();
     }
 
-    public User(int id, string firstName, string lastName, string email, byte[] passwordSalt, byte[] passwordHash,
+    public User(int id, string userName, string email, byte[] passwordSalt, byte[] passwordHash,
                 bool status, AuthenticatorType authenticatorType) : this()
     {
         Id = id;
-        FirstName = firstName;
-        LastName = lastName;
+        UserName = userName;
         Email = email;
         PasswordSalt = passwordSalt;
         PasswordHash = passwordHash;

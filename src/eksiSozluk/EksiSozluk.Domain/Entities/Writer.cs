@@ -16,12 +16,11 @@ public class Writer:User
         
     }
     
-    public Writer(int id, string firstName, string lastName, string email, byte[] passwordSalt, byte[] passwordHash,
+    public Writer(int id,string userName,string email, byte[] passwordSalt, byte[] passwordHash,
         bool status, AuthenticatorType authenticatorType) : this()
     {
         Id = id;
-        FirstName = firstName;
-        LastName = lastName;
+        UserName = userName;
         Email = email;
         PasswordSalt = passwordSalt;
         PasswordHash = passwordHash;
