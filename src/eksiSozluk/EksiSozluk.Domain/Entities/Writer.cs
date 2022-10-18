@@ -22,7 +22,7 @@ public class Writer:User
     }
     
     public Writer(int id,string userName,string email, byte[] passwordSalt, byte[] passwordHash,
-        bool status, AuthenticatorType authenticatorType) : this()
+        bool status, AuthenticatorType authenticatorType) : base(id,userName,email,passwordSalt,passwordHash, status, authenticatorType)
     {
         Id = id;
         UserName = userName;
