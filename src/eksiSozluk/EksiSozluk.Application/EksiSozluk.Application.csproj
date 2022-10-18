@@ -6,4 +6,14 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="Abstractions\Services" />
+      <Folder Include="Features" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\corePackages\Core.Persistence\Core.Persistence.csproj" />
+      <ProjectReference Include="..\EksiSozluk.Domain\EksiSozluk.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
