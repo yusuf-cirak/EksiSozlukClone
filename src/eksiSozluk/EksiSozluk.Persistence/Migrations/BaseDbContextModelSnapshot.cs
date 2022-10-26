@@ -24,12 +24,10 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("Core.Security.Entities.EmailAuthenticator", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("ActivationKey")
                         .HasColumnType("nvarchar(max)")
@@ -49,8 +47,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("UserId");
 
                     b.HasKey("Id");
@@ -63,12 +61,10 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("Core.Security.Entities.OperationClaim", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
@@ -92,12 +88,10 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("Core.Security.Entities.OtpAuthenticator", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
@@ -118,8 +112,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("UserId");
 
                     b.HasKey("Id");
@@ -132,12 +126,10 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("Core.Security.Entities.RefreshToken", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2")
@@ -183,8 +175,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("UserId");
 
                     b.HasKey("Id");
@@ -196,12 +188,10 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("Core.Security.Entities.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("AuthenticatorType")
                         .HasColumnType("int")
@@ -248,19 +238,17 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("Core.Security.Entities.UserOperationClaim", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
 
-                    b.Property<int>("OperationClaimId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("OperationClaimId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("OperationClaimId");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -269,8 +257,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("UserId");
 
                     b.HasKey("Id");
@@ -285,12 +273,10 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("EksiSozluk.Domain.Entities.Entry", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -312,8 +298,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("WriterId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("WriterId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("WriterId");
 
                     b.HasKey("Id");
@@ -325,12 +311,10 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("EksiSozluk.Domain.Entities.EntryComment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -341,8 +325,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
 
-                    b.Property<int>("EntryId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("EntryId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("EntryId");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -351,8 +335,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("WriterId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("WriterId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("WriterId");
 
                     b.HasKey("Id");
@@ -366,19 +350,17 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("EksiSozluk.Domain.Entities.EntryCommentFavorite", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
 
-                    b.Property<int>("EntryCommentId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("EntryCommentId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("EntryCommentId");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -387,8 +369,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("WriterId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("WriterId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("WriterId");
 
                     b.HasKey("Id");
@@ -402,19 +384,17 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("EksiSozluk.Domain.Entities.EntryCommentVote", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
 
-                    b.Property<int>("EntryCommentId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("EntryCommentId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("EntryCommentId");
 
                     b.Property<bool>("IsUpVote")
@@ -427,8 +407,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("WriterId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("WriterId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("WriterId");
 
                     b.HasKey("Id");
@@ -442,19 +422,17 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("EksiSozluk.Domain.Entities.EntryFavorite", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
 
-                    b.Property<int>("EntryId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("EntryId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("EntryId");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -463,8 +441,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("WriterId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("WriterId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("WriterId");
 
                     b.HasKey("Id");
@@ -478,19 +456,17 @@ namespace EksiSozluk.Persistence.Migrations
 
             modelBuilder.Entity("EksiSozluk.Domain.Entities.EntryVote", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
 
-                    b.Property<int>("EntryId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("EntryId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("EntryId");
 
                     b.Property<bool>("IsUpVote")
@@ -503,8 +479,8 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
 
-                    b.Property<int>("WriterId")
-                        .HasColumnType("int")
+                    b.Property<Guid>("WriterId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("WriterId");
 
                     b.HasKey("Id");
