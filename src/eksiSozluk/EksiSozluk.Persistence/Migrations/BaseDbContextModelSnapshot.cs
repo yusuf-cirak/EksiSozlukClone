@@ -417,15 +417,15 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasColumnType("int")
                         .HasColumnName("EntryCommentId");
 
+                    b.Property<bool>("IsUpVote")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsUpVote");
+
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
-
-                    b.Property<int>("VoteType")
-                        .HasColumnType("int")
-                        .HasColumnName("VoteType");
 
                     b.Property<int>("WriterId")
                         .HasColumnType("int")
@@ -493,15 +493,15 @@ namespace EksiSozluk.Persistence.Migrations
                         .HasColumnType("int")
                         .HasColumnName("EntryId");
 
+                    b.Property<bool>("IsUpVote")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsUpVote");
+
                     b.Property<DateTime>("UpdatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValue(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                         .HasColumnName("UpdatedDate");
-
-                    b.Property<int>("VoteType")
-                        .HasColumnType("int")
-                        .HasColumnName("VoteType");
 
                     b.Property<int>("WriterId")
                         .HasColumnType("int")
@@ -635,7 +635,7 @@ namespace EksiSozluk.Persistence.Migrations
                     b.HasOne("EksiSozluk.Domain.Entities.Writer", "Writer")
                         .WithMany("EntryCommentVotes")
                         .HasForeignKey("WriterId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("EntryComment");
