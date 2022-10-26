@@ -5,7 +5,7 @@ namespace EksiSozluk.Domain.Entities;
 
 public class Entry:Entity
 {
-    public int WriterId { get; set; }
+    public Guid WriterId { get; set; }
     public string Subject { get; set; }
     public string Content { get; set; }
 

@@ -24,7 +24,7 @@ public class User : Entity
         RefreshTokens = new HashSet<RefreshToken>();
     }
 
-    public User(int id, string userName, string email, byte[] passwordSalt, byte[] passwordHash,
+    public User(Guid id, string userName, string email, byte[] passwordSalt, byte[] passwordHash,
                 bool status, AuthenticatorType authenticatorType) : this()
     {
         Id = id;
