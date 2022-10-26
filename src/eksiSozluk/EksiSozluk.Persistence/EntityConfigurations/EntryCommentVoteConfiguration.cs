@@ -14,7 +14,7 @@ public sealed class EntryCommentVoteConfiguration : BaseConfiguration<EntryComme
         
         builder.Property(ecv => ecv.EntryCommentId).HasColumnName("EntryCommentId");
 
-        builder.Property(ecv => ecv.VoteType).HasColumnName("VoteType");
+        builder.Property(ecv => ecv.IsUpVote).HasColumnName("IsUpVote");
 
 
         builder.HasOne(ecv => ecv.EntryComment).WithMany(ec => ec.EntryCommentVotes)

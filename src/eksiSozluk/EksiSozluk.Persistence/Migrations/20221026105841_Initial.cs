@@ -251,7 +251,7 @@ namespace EksiSozluk.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EntryId = table.Column<int>(type: "int", nullable: false),
                     WriterId = table.Column<int>(type: "int", nullable: false),
-                    VoteType = table.Column<int>(type: "int", nullable: false),
+                    IsUpVote = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                 },
@@ -308,7 +308,7 @@ namespace EksiSozluk.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     WriterId = table.Column<int>(type: "int", nullable: false),
                     EntryCommentId = table.Column<int>(type: "int", nullable: false),
-                    VoteType = table.Column<int>(type: "int", nullable: false),
+                    IsUpVote = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified))
                 },

@@ -14,7 +14,7 @@ public sealed class EntryVoteConfiguration : BaseConfiguration<EntryVote>
         
         builder.Property(ev => ev.WriterId).HasColumnName("WriterId");
 
-        builder.Property(ev => ev.VoteType).HasColumnName("VoteType");
+        builder.Property(ev => ev.IsUpVote).HasColumnName("IsUpVote");
 
         builder.HasOne(ev => ev.Entry).WithMany(e => e.EntryVotes).HasForeignKey(ev => ev.EntryId);
 
