@@ -1,0 +1,9 @@
+:host{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.entry-detail-decription-wrapper{
+    margin-top:50px;
+}

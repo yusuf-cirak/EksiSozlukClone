@@ -1,0 +1,122 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: lightblue;
+}
+
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    padding-top:120px;
+    min-height: 100vh;
+    margin : 0 auto;
+}
+
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.fixed-entry-list{
+    position: fixed;
+    top:120px;
+    width: 240px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.fixed-entry-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .fixed-entry-list {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+  }
+
+
+.last-entries-wrapper{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+.right-wrapper{
+    width: 25%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:20px;
+}
+
+.input-wrapper > input{
+    width: 350px;
+    height: 30px;
+    padding: 20px 5px;
+}
+.input-wrapper > label{
+    margin-bottom:10px;
+}
+
+
+.form-title{
+    margin-bottom: 50px;
+}
+
+.checkbox-wrapper > span{
+    font-size:14px;
+    margin-left:10px;
+}
+
+.checkbox-wrapper{
+    display: flex;
+    vertical-align: center;
+}
+
+
+.login-button{
+    height: 50px;
+    width: 350px;
+    background-color: cyan;
+    border: none;
+    cursor: pointer;
+    margin-top:30px;;
+}

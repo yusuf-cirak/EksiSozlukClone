@@ -1,0 +1,35 @@
+<div class="entry">
+    <div class="entry-title-wrapper" *ngIf="!isComment">
+        <h2><a routerLink="/entry-detail">{{entry.title}}</a></h2>
+    </div>
+
+    <div class="entry-detail-wrapper">
+        <p>{{entry.detail}}</p>
+    </div>
+
+    <div class="entry-icons-wrapper">
+        <div class="entry-bottom-left-icons">
+            <div class="entry-bottom-icon">
+                <mat-icon aria-hidden="false" aria-label="Up" fontIcon="keyboard_arrow_up"></mat-icon>
+            </div>
+            <mat-icon aria-hidden="false" aria-label="Down" fontIcon="keyboard_arrow_down"></mat-icon>
+        </div>
+        <div class="entry-bottom-right-icons">
+            <div class="entry-bottom-icon">
+                <mat-icon class="custom-icon-size" aria-hidden="false" aria-label="Share" fontIcon="share"></mat-icon>
+            </div>
+            <div class="entry-bottom-icon">
+                <mat-icon class="custom-icon-size" aria-hidden="false" aria-label="More" fontIcon="more_horiz"></mat-icon>
+            </div>
+        </div>
+    </div>
+    <div class="entry-author-wrapper">
+        <div class="author-detail-wrapper">
+            <div class="author-name">{{entry.author}}</div>
+            <div class="entry-date">{{entry.date}}</div>
+        </div>
+        <div class="author-image-wrapper">
+            <img src="https://picsum.photos/200/300" alt="">
+        </div>
+    </div>
+</div>
