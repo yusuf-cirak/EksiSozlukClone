@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Core.Application.Rules;
+namespace Core.Application;
 
-public static class RegisterBusinessRules
+public static class ApplicationServiceExtensions
 {
-    public static IServiceCollection AddSubClassesOfType(this IServiceCollection services,Assembly assembly,Type type,Func<IServiceCollection,Type,IServiceCollection>? addWithLifeCycle=null)
+    public static IServiceCollection AddBusinessRuleServices(this IServiceCollection services,Assembly assembly,Type type,Func<IServiceCollection,Type,IServiceCollection>? addWithLifeCycle=null)
     {
         var types = assembly.GetTypes().Where(t => t.IsSubclassOf(type) && type != t);
 
@@ -23,8 +23,7 @@ public static class RegisterBusinessRules
                 addWithLifeCycle(services, businessRuleType);
             }
         }
-
-
+        
         return services;
 
     }

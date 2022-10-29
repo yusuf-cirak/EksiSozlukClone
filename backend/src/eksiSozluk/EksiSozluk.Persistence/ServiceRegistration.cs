@@ -1,4 +1,7 @@
-﻿using EksiSozluk.Application.Abstractions.Repositories;
+﻿using System.Reflection;
+using Core.Persistence;
+using Core.Persistence.Repositories;
+using EksiSozluk.Application.Abstractions.Repositories;
 using EksiSozluk.Persistence.Contexts;
 using EksiSozluk.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -18,29 +21,9 @@ public static class ServiceRegistration
                 sqlOpt.EnableRetryOnFailure();
             });
         });
-
-
-        services.AddScoped<IEmailAuthenticatorRepository,EmailAuthenticatorRepository>();
-        services.AddScoped<IOperationClaimRepository,OperationClaimRepository>();
-        services.AddScoped<IOtpAuthenticatorRepository,OtpAuthenticatorRepository>();
-        services.AddScoped<IRefreshTokenRepository,RefreshTokenRepository>();
-        services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
-
-        services.AddScoped<IEntryRepository,EntryRepository>();
-        services.AddScoped<IEntryCommentRepository, EntryCommentRepository>();
-        services.AddScoped<IEntryCommentFavoriteRepository, EntryCommentFavoriteRepository>();
-        services.AddScoped<IEntryCommentVoteRepository,EntryCommentVoteRepository>();
-        services.AddScoped<IEntryFavoriteRepository,EntryFavoriteRepository>();
-        services.AddScoped<IEntryVoteRepository,EntryVoteRepository>();
-
-        services.AddScoped<IWriterRepository, WriterRepository>();
         
+        services.AddRepositoryServices(Assembly.GetExecutingAssembly(), typeof(EfRepositoryBase<,>));
+
         return services;
-
-
-
-        
-
-
     }
 }
