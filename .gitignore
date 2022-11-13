@@ -53,3 +53,4 @@ frontend/typings
 .DS_Store
 Thumbs.db
 /backend/.vs/EksiSozlukClone
+/backend/.vs/ProjectEvaluation
