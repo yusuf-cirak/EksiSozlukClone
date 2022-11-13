@@ -52,3 +52,4 @@ frontend/typings
 # System files
 .DS_Store
 Thumbs.db
+/backend/.vs/EksiSozlukClone
